@@ -15,7 +15,7 @@
   **or**
 - Java 17
 - Maven 3.12
-- Docker Engine	19.03.0+ (fro running Postgres container)
+- Docker Engine	19.03.0+ (for running Postgres container)
 
 ## Prerequisites
 
