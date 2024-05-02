@@ -1,0 +1,52 @@
+[
+  {
+    "carManufacturerId": 200,
+    "model": "Test",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  },
+  {
+    "carManufacturerId": 200,
+    "model": "Test 2",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  },
+  {
+    "carManufacturerId": 200,
+    "model": "",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  },
+  {
+    "carManufacturerId": 200,
+    "model": "Test",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  },
+  {
+    "carManufacturerId": 1,
+    "model": "Test 3",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  }
+]

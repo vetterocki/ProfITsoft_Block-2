@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ProfITsoft Block-2
+  mvc:
+    servlet:
+      path: /api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/database
+    username: postgres
+    password: password
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+

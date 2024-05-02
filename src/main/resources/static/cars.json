@@ -1,0 +1,70 @@
+[
+  {
+    "carManufacturerId": 1,
+    "model": "Model 1",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT"
+    ]
+  },
+  {
+    "carManufacturerId": 1,
+    "model": "Model 2",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "COUPE"
+    ]
+  },
+  {
+    "carManufacturerId": 1,
+    "model": "",
+    "yearManufactured": "2003",
+    "color": "Invalid model value",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  },
+  {
+    "carManufacturerId": 2,
+    "model": "Cayenne",
+    "yearManufactured": "2020",
+    "color": "Black",
+    "carTypes": [
+      "JEEP"
+    ]
+  },
+  {
+    "carManufacturerId": 2,
+    "model": "911",
+    "yearManufactured": "2009",
+    "color": "RED",
+    "carTypes": [
+      "SPORT",
+      "COUPE"
+    ]
+  },
+  {
+    "carManufacturerId": 2,
+    "model": "911",
+    "yearManufactured": "2009",
+    "color": "Already present model",
+    "carTypes": [
+      "SPORT",
+      "COUPE"
+    ]
+  },
+  {
+    "carManufacturerId": 1203,
+    "model": "Non-existing-manufacturer",
+    "yearManufactured": "2003",
+    "color": "Yellow",
+    "carTypes": [
+      "SPORT",
+      "ANOTHER"
+    ]
+  }
+]

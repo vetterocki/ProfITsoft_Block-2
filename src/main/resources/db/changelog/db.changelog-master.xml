@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- Changeset for creating the car_manufacturers table -->
+    <changeSet id="createCarManufacturersTable" author="vetterocki">
+        <createTable tableName="car_manufacturers">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="country" type="varchar(255)"/>
+            <column name="year_founded" type="integer"/>
+            <column name="ceo" type="varchar(255)"/>
+        </createTable>
+        <createIndex tableName="car_manufacturers" indexName="unique_name_index" unique="true">
+            <column name="name"/>
+        </createIndex>
+    </changeSet>
+
+    <!-- Changeset for creating the cars table -->
+    <changeSet id="createCarsTable" author="vetterocki">
+        <createTable tableName="cars">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="model" type="varchar(255)"/>
+            <column name="car_manufacturer_id" type="bigint"/>
+            <column name="year_manufactured" type="integer"/>
+            <column name="color" type="varchar(255)"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="cars"
+                                 baseColumnNames="car_manufacturer_id"
+                                 constraintName="fk_cars_cars_manufacturers"
+                                 referencedTableName="car_manufacturers"
+                                 referencedColumnNames="id"/>
+
+        <createIndex tableName="cars" indexName="multi_sort_index">
+            <column name="car_manufacturer_id"/>
+            <column name="year_manufactured"/>
+        </createIndex>
+        <createIndex tableName="cars" indexName="car_manufactured_id_index">
+            <column name="car_manufacturer_id"/>
+        </createIndex>
+        <createIndex tableName="cars" indexName="year_manufactured_index">
+            <column name="year_manufactured"/>
+        </createIndex>
+        <createIndex tableName="cars" indexName="unique_model_index" unique="true">
+            <column name="model"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="createCarTypesTable" author="vetterocki">
+        <createTable tableName="car_types">
+            <column name="car_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type_name" type="varchar(255)"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="car_types"
+                                 baseColumnNames="car_id"
+                                 constraintName="fk_car_car_types"
+                                 referencedTableName="cars"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="insertCarManufacturers" author="vetterocki">
+        <insert tableName="car_manufacturers">
+            <column name="name" value="Tesla"/>
+            <column name="country" value="USA"/>
+            <column name="year_founded" value="2000"/>
+            <column name="ceo" value="Elon Musk"/>
+        </insert>
+        <insert tableName="car_manufacturers">
+            <column name="name" value="Porsche"/>
+            <column name="country" value="Germany"/>
+            <column name="year_founded" value="1950"/>
+            <column name="ceo" value="Oliver Blume"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>
