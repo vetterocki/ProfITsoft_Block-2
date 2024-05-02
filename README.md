@@ -21,7 +21,7 @@
 
 Before running API execute following command to generate MapStruct classes:
 ```
-mvn spring-boot:run
+mvn clean install
 ```
 
 if you have Docker installed, you can run Postgres instance via docker-compose.yaml file:
